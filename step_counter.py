@@ -5,7 +5,7 @@ import math
 # Initialize I2C
 i2c = I2C(1, scl=Pin(1), sda=Pin(0), freq=400000)
 
-# MPU-6050 addresses and commands (adjust based on your library/documentation)
+# MPU-6050 addresses and commands 
 MPU6050_ADDR = 0x68
 ACCEL_XOUT_H = 0x3B
 ACCEL_YOUT_H = 0x3D
@@ -36,14 +36,14 @@ def read_acceleration():
 
 # Step detection setup
 step_count = 0
-threshold = 15000  # This threshold might need adjustment
+threshold = 15000  
 last_z = 0
 
 mpu6050_init()
 
 while True:
     x, y, z = read_acceleration()
-    # Simple step detection algorithm (you might need to adjust the logic)
+    # Simple step detection algorithm 
     if abs(z - last_z) > threshold:
         step_count += 1
         print("Step detected. Total steps:", step_count)
