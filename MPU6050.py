@@ -56,7 +56,7 @@ class MPU6050:
         
         # set the modified based on the gyro range (need to divide to calculate)
         gr:int = self.read_gyro_range()
-        modifier:float = None
+        modifier : float
         if gr == 0:
             modifier = 131.0
         elif gr == 1:
@@ -87,7 +87,7 @@ class MPU6050:
         
         # set the modified based on the gyro range (need to divide to calculate)
         ar:int = self.read_accel_range()
-        modifier:float = None
+        modifier : float
         if ar == 0:
             modifier = 16384.0
         elif ar == 1:
@@ -154,4 +154,4 @@ class MPU6050:
         elif index == 3:
             return 0x18
         else:
-            raise Exception("Range index '" + index + "' invalid. Must be 0-3.")
+            raise Exception("Range index '{}' invalid. Must be 0-3.".format(index))
