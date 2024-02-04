@@ -7,7 +7,10 @@ Pin(5, Pin.in, Pin.PULL_UP)
 Pin(4, Pin.in, Pin.PULL_UP)
 i2c = I2C(0, scl=Pin(5), sda=Pin(4))
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f2aa7a6628029355b1723d33a305d5a6b8411f7f
 # MPU-6050 addresses and commands 
 MPU6050_ADDR = 0x68
 ACCEL_XOUT_H = 0x3B
